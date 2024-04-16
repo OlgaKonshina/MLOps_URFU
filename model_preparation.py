@@ -2,6 +2,7 @@ from sklearn.model_selection import train_test_split
 from model_preprocessing import data_preparation
 from sklearn.svm import SVR  # Метод опорных векторов для регрессии scikit-learn
 import pickle  # для сохранения модели
+from sklearn.metrics import mean_squared_error
 
 model = SVR()
 path = '/home/olga/MLOps/train/train_data.csv'
@@ -14,6 +15,9 @@ X_train, X_val, y_train, y_val = train_test_split(X, y,
                                                   test_size=0.3,
                                                   random_state=73)
 model.fit(X_train, y_train)
+predition = model.predict(X_train)
+mse = mean_squared_error(y_train,predition)
+print('mse :' , mse)
 
 pickle.dump(model, open('/home/olga/MLOps/model.pkl', "wb"))  # сохраняем модель
 
