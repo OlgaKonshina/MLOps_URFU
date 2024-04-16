@@ -12,4 +12,4 @@ test_predict = loaded_model.predict(X)
 mse = mean_squared_error(y, test_predict)
 
 print('mse_test', mse)
-print('Предсказания модели :', test_predict)
+
