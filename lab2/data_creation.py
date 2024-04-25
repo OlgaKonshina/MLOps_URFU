@@ -5,7 +5,7 @@ import opendatasets as od
 
 od.download(
     "https://www.kaggle.com/datasets/mexwell/heart-disease-dataset/data?select=heart_statlog_cleveland_hungary_final.csv")
-df = pd.read_csv('heart-disease-dataset/heart_statlog_cleveland_hungary_final.csv')
+df = pd.read_csv('heart_statlog_cleveland_hungary_final.csv')
 # разбиваем на тренировочную и валидационную
 x_train, x_val, = train_test_split(df, test_size=0.2,random_state=42)
 # Путь для сохранения файлов train
